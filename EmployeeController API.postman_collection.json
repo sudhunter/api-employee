@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "a19e3aba-fb06-4ae1-842e-9b11195c77f3",
+		"name": "EmployeeController API",
+		"description": "Postman collection for testing EmployeeController endpoints.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5449504",
+		"_collection_link": "https://dark-station-896713.postman.co/workspace/api-employee~1efca90e-6851-4c63-b8a5-841d1bfce3ca/collection/5449504-a19e3aba-fb06-4ae1-842e-9b11195c77f3?action=share&source=collection_link&creator=5449504"
+	},
+	"item": [
+		{
+			"name": "Get Employee by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Juan\",\n  \"lastName\": \"Silva\",\n  \"gender\": \"M\",\n  \"birthDate\" : \"01-03-2010\",\n  \"jobTitle\": \"TESTER\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employees/single",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"single"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Multiple Employees",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"firstName\": \"Alice\",\n    \"lastName\": \"Smith\",\n    \"yearOld\": 28,\n    \"gender\": \"F\",\n    \"jobId\": 2\n  },\n  {\n    \"firstName\": \"Bob\",\n    \"lastName\": \"Brown\",\n    \"yearOld\": 32,\n    \"gender\": \"M\",\n    \"jobId\": 3\n  }\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 1,\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"yearOld\": 31,\n  \"gender\": \"M\",\n  \"jobId\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
