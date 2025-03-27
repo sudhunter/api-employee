@@ -126,7 +126,7 @@ class EmployeeServiceImplTest {
 
         // Act & Assert
         ApiException exception = assertThrows(ApiException.class, () -> employeeService.deleteById(1L));
-        assertEquals("Unable to delete employee with ID: 1", exception.getMessage());
+        assertEquals("Employee not found with ID: 1", exception.getMessage());
         verify(employeeRepository, never()).deleteById(anyLong());
     }
     
