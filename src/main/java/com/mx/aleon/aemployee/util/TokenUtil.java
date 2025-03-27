@@ -7,6 +7,8 @@ import org.slf4j.MDC;
 
 public class TokenUtil {
 
+	private static final String TOKEN_TRANSACTION = "tokenTransaction";
+
 	private TokenUtil() {}
 	
 	/**
@@ -20,8 +22,12 @@ public class TokenUtil {
 	    byte[] randomBytes = new byte[32];
 	    secureRandom.nextBytes(randomBytes);
 	    String tokenTransaction =  Base64.getUrlEncoder().withoutPadding().encodeToString(randomBytes);
-	    MDC.put("tokenTransaction", tokenTransaction);
+	    MDC.put(TOKEN_TRANSACTION, tokenTransaction);
 	    return tokenTransaction;
+	}
+	
+	public static String getToken() {
+		return MDC.get(TOKEN_TRANSACTION);
 	}
 
 }

@@ -4,7 +4,7 @@ package com.mx.aleon.aemployee.ex;
  * ApiException is a custom exception class used to handle API-related errors.
  * This exception includes an error code and a message describing the error.
  */
-public class ApiException extends Exception {
+public class ApiException extends RuntimeException {
 
     /** 
      * Serial version UID for ensuring compatibility during the deserialization process.
@@ -35,4 +35,5 @@ public class ApiException extends Exception {
     public int getCode() {
         return code;
     }
+    
 }
